@@ -11,8 +11,9 @@
 		# form 태그
 	
 			- 입력양식은 <form>태그로 시작 하고 </form>태그로 마무리 한다. 
-			- action속성에 입력을 처리하는 서버의 경로를 적어준다. 
-			- method속성에 입력데이터가 서버로 전송되는 방법을 기술한다. GET과 POST 방식이 있고 default(생략)방식은 GET방식이다. 
+			- action속성에 입력을 처리하는 서버의 경로를 적어준다. 목적지
+			- method속성에 입력데이터가 서버로 전송되는 방법을 기술한다. GET과 POST 방식이 있고 default(생략)방식은 GET방식이다.
+			  목적지를 어떻게 갈지 방법이라고 생각하면 된다. 
 			- name속성은 입력 데이터의 이름으로 서버로 전송된다. 
 		
 				1) GET방식 : URL주소 뒤에 파라미터를 붙여서 데이터를 전달하는 방식.
@@ -23,7 +24,7 @@
 				
 				2) POST방식 : 사용자가 입력한 데이터를 URL 주소에 붙이지 않고 
 				             HTTP Request 헤더에 포함시켜서 전송하는 방식이다.
-				             보안O
+				             보안O 보안쪽으로 더 좋아서 아이디 비번 이런 방식에서 많이 사용
 	
 	
 	
@@ -33,7 +34,11 @@
 			- 데이터는 name1=Value1&name2=value2형태로 action속성에 지정된 url로 전송된다.
 	
 			(참고) reset 타입 : form태그에 속해 있는 태그의 값을 초기화 한다.
+			
+			submit을 사용하면 제출이라고 나오니 안에 글씨를 바꾸고 싶으면 value=""을 사용한다.
 	
+		value는 안에 기본적으로 적혀있는 값을 내가 적은 값으로 바꿔준다.
+		<input type="reset"> 은 초기화다.
 	
 		input에 name은 식별자다.
 	-->
@@ -42,7 +47,10 @@
 		<h3>로그인</h3>
 		<p>아이디 : <input type="text" name="id"> </p>
 		<p>패스워드 : <input type="password" name="pwd"></p>
-		<p><input type="submit" value="로그인"></p>
+		<p>
+			<input type="submit" value="로그인">
+			<input type="reset" value="다시쓰기">
+		</p>
 	</form>
 
 </body>

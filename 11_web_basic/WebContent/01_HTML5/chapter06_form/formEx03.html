@@ -1,0 +1,232 @@
+﻿  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input 타입 및 태그</title>
+</head>
+<body>
+
+	<!-- 
+		
+		# text 타입
+		
+		- 가장 일반적이며 많이 사용되어지는 입력 요소의 유형이다.
+		- 기본 길이는 20글자이며 size 속성으로 필드의 크기를 변경할 수 있다. 
+			
+			[ 추가 속성 ] 
+			- autocomplete : 자동으로 입력을 완성한다.
+			- autofocus    : 페이지가 로드되면 자동으로 입력 포커스를 갖는다.
+			- placeholder  : 입력 힌트를 필드에 희미하게 보여준다.
+			- readonly     : 읽기 전용 필드
+			- required     : 입력양식을 제출하기 전에 반드시 채워져 있어야 함을 나타낸다.
+			- pattern      : 허용하는 입력의 형태를 정규식으로 지정한다.
+			- maxlength	   : 입력값의 최대 자리수 지정
+			- disabled     : 데이터 전송 불가 지정 필드
+			
+	-->
+	
+	<h3>text type</h3>
+	<form>
+		<p>상품코드 : <input type="text" required="required"></p>
+		<p>상품이름 : <input type="text" required autofocus></p>
+		<p>상품수량 : <input type="text" maxlength="3" size="3"></p>
+		<p>상품정보 : <input type="text" placeholder="선택사항입니다."></p>
+		<p>담당자코드 : <input type="text" value="mgr1111" disabled></p>
+		<p>담당자 : <input type="text" value="조00 부장" readonly></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+	
+	<!--
+	  
+		# password 타입
+	
+		- 패스워드 필드를 정의한다. 
+		- 사용자가 입력한 글자는 보이지 않는다.
+		 
+	-->
+	
+	<h3>password type</h3>
+	<form>
+		<p>패스워드 <input type="password"></p>
+		<p><input type="submit"></p>
+		
+	</form>
+	<br><hr><br>	
+	
+	<!-- 
+	
+		# radio 타입
+		
+		- 여러 항목 중에서 하나만을 선택할 수 있다.
+	 	- name이 같아야 동일한 그룹으로 취급이 된다.
+	 	- 선택된 라디오 버튼의 value값이 name=value 형태로 전달이 된다.
+	 	
+	 -->
+	 
+	 <h3>radio type</h3>
+	<form>
+	<!-- name은 하나의 무리를 지어서 하나만 정하게된다. -->
+		<input type="radio" name="month" value="1"> 1개월
+		<input type="radio" name="month" value="2"> 2개월
+		<input type="radio" name="month" value="3" checked> 3개월
+		<input type="radio" name="month" value="4"> 4개월
+		<input type="radio" name="month" value="5"> 5개월
+		<input type="radio" name="month" value="6"> 6개월
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+	
+	<!-- 
+		
+		# checkbox 타입
+	
+		- 체크박스는 사용자가 여러 항목을 동시에 선택할 수 있다.
+		- radio type과 같이 name 속성이 동일해야 된다.
+		- radio type과 같이 checked 속성을 지정할 수 있다.
+		- radio type과 같이 name=value형태로 데이터가 전송된다.
+	
+	 -->
+	
+	<h3>checkbox type</h3>
+	<form>
+	<!-- name은 하나의 무리를 지어서 하나만 정하게된다. -->
+		<input type="checkbox" name="month" value="1" checked> 1개월
+		<input type="checkbox" name="month" value="2" checked> 2개월
+		<input type="checkbox" name="month" value="3" checked> 3개월
+		<input type="checkbox" name="month" value="4"> 4개월
+		<input type="checkbox" name="month" value="5"> 5개월
+		<input type="checkbox" name="month" value="6"> 6개월
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+
+	 <!-- 
+	
+		# select 태그
+		
+		- 메뉴를 표시하고 사용자로 선택하게 한다.
+		- <select>요소는 항상 <option>요소와 함께 사용된다.
+		- <option>요소는 value속성을 가지고 있어야한다.
+		- value가 없을 경우는 option의 표시값이 value로 전송된다.
+		- selected속성을 이용해 특정 항목을 초깃값으로 선택할 수 있다.
+		- <optgroup>요소를 이용해 option요소를 그룹화 할 수 있다.
+	
+	 -->
+	 
+	<h3>select tag</h3>
+	<form>
+		<select>
+			<option value="1">1개월</option>
+			<option value="2">2개월</option>
+			<option value="3" selected="selected">3개월</option>
+			<option value="4">4개월</option>
+			<option value="5">5개월</option>
+			<option value="6">6개월</option>
+		</select>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+	 
+	 <!-- 
+		
+		# button 타입
+	
+		- 일반적인 버튼은 <input type="button">으로 생성하는 방법과 <button>태그로 생성하는 방법이 있다.
+		- 버튼과 같이 자주 사용되는 onclick()함수는 버튼이 클릭되면 동작하는 함수이다. 
+	
+	 -->
+	 
+	<h3>button tag & type</h3>
+	<form>
+		<p><input type="button" value="login"></p>
+		<p><button>회원가입</button></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+	 
+   	<!--
+	
+		# textarea 태그
+		 
+		- 여러줄의 텍스트를 입력받을 때 사용하는 태그.
+		- 영역의 크기는 rows와 cols로 설정한다.
+		- 사용자가 초기 공간보다 더 많은 텍스트를 입력하면 자동으로 스크롤바가 생성된다.
+	
+	 -->
+
+	<h3>textarea type</h3>
+	<form>
+		<p><textarea rows="10" cols="30" name="textarea1"></textarea></p>
+		<p><textarea rows="10" cols="30" name="textarea2">초깃값은 이고에 작성합니다.</textarea></p>
+		<p><textarea rows="10" cols="30" name="textarea1" placeholder="100자 이내로 작성하세요." maxlength="100"></textarea></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+   	
+	<!-- 
+	
+		# file 타입
+		
+		- 사용자가 파일을 선택해서 서버로 업로드해야 하는 경우 사용한다.
+		- 웹 브라우저마다 다르게 구현되고 있다.
+		- form의 메서드 전송방식이 반드시 post이어야 하며  enctype="multipart/form-data" 속성을 반드시 지정해야 한다.
+		   
+	 -->
+	
+	<h3>file type</h3>
+	<form method="post" enctype="multipart/form-data">
+		<p>제안서 업로드 : <input type="file" name="f"></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
+	
+	<!-- 
+		
+		# hidden 타입
+	
+		- 사용자는 볼 수 없고 서버로 데이터를 전송하고 싶을 때 사용 한다.
+		- hidden 요소의 name과 value값이 서버로 전달된다.
+	 
+	 -->
+	
+	
+	<!-- 
+		
+		# date 타입
+		
+		- 사용자로 하여금 날짜를 선택하게 한다.
+		- min,max속성을 사용해 특정기간에서만 날짜를 선택하도록 할 수 있다.
+		- 익스플로어 및 특정 브라우저는 아직 지원이 되지 않는다.
+		
+	 -->
+
+	 
+	<!-- 
+	
+		# number 타입
+		
+		- 정수를 입력받을 수 있다. 
+		- 브라우저에 따라서 다르게 표시된다.
+	 	
+	 	- [ 속성 ]
+	 	
+	 	value     : 초깃값
+	 	step	  : 증감 숫자
+	 	min , max : 최소값, 최대값
+	 	
+	 -->
+			 
+	
+	<!-- 
+	 
+	 	# email 타입
+	 	
+	    - 모습은 text타입과 비슷하지만 이메일에 유효한 주소를 검사한다. 
+	    - 유효값 확인은 submit을 클릭할 경우에 진행된다.
+	 	
+	  -->
+  
+
+</body>
+</html>
