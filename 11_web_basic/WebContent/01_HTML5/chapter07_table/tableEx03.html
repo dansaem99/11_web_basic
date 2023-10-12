@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 셀 병합</title>
+</head>
+<body>
+
+	<!-- 
+	
+		# 테이블 셀 병합
+		
+		1) colspan : 컬럼(열)들을 병합한다.  
+		2) rowspan : 로우(행)들을 병합한다.
+	
+	 -->
+
+	<h2>열 합치기</h2>
+	<table border="1">
+		<tr>
+			<td colspan="3">부가세 유형별 요약</td>
+		</tr>
+		<tr>
+			<td>부가세유형코드</td>
+			<td>금액</td>
+			<td>세액</td>
+		</tr>
+		<tr>
+			<td>10152</td>
+			<td>70,000,000</td>
+			<td>7,000,000</td>
+		</tr>
+		<tr>
+			<td>합계</td>
+			<td colspan="2">77,010,152</td>
+		</tr>
+	</table>
+	
+	<hr />
+	
+	<h2>행 합치기</h2>
+	<table border="1">
+		<tr>
+			<td rowspan="3">과세</td>
+			<td>세금계산서발급분</td>
+		</tr>
+		<tr>
+			<td>신용카드</td>   
+		</tr>
+		<tr>
+			<td>현금영수증</td>   
+		</tr>
+		<tr>
+			<td>기타</td>   
+			<td></td>   
+		</tr>
+	</table>
+	
+</body>
+</html>

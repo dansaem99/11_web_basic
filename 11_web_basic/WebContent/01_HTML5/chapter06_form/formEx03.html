@@ -187,9 +187,19 @@
 	
 		- 사용자는 볼 수 없고 서버로 데이터를 전송하고 싶을 때 사용 한다.
 		- hidden 요소의 name과 value값이 서버로 전달된다.
+		- form 안쪽에 넣어야지 작동하지 밖에 있으면 작동하지 않는다.
 	 
 	 -->
 	
+	<h3>hidden type</h3>
+	<form>
+		<p>아이디 : <input type="text" name="id"></p>
+		<input type="hidden" name="isPc" value="true">
+		<input type="hidden" name="iTime" value="2023-10-11">		
+		<input type="hidden" name="locationCd" value="100">
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
 	
 	<!-- 
 		
@@ -199,8 +209,17 @@
 		- min,max속성을 사용해 특정기간에서만 날짜를 선택하도록 할 수 있다.
 		- 익스플로어 및 특정 브라우저는 아직 지원이 되지 않는다.
 		
+		
 	 -->
 
+	<h3>date type</h3>
+	<form>
+		<p>예약일1 : <input type="date" name="date1"></p>
+		<p>예약일2 : <input type="date" name="date2" value="1999-11-02"></p>
+		<p>예약일3 : <input type="date" name="date3" min="2023-10-11" max="2023-10-31"></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
 	 
 	<!-- 
 	
@@ -216,7 +235,15 @@
 	 	min , max : 최소값, 최대값
 	 	
 	 -->
-			 
+		
+	<h3>number type</h3>
+	<form>
+		<p>주문수량 <input type="number" name="orderOty"> </p>
+		<p>사이즈 선택1 : <input type="number" name="size1" value="250" step="5"></p>
+		<p>사이즈 선택2 : <input type="number" name="size2" value="250" step="5" min="200" max="300"></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>	 
 	
 	<!-- 
 	 
@@ -227,6 +254,12 @@
 	 	
 	  -->
   
+	<h3>email type</h3>
+	<form>
+		<p>이메일 : <input type="email" name="e"></p>
+		<p><input type="submit"></p>
+	</form>
+	<br><hr><br>
 
 </body>
 </html>
