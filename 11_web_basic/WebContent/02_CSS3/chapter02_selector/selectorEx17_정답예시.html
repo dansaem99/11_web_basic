@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습문제</title>
+<style>
+
+	tr:nth-child(1) > td:nth-child(2) ,
+	tr:nth-child(2) > td:nth-child(2) ,
+	tr:nth-child(3) > td:nth-child(2) { 
+			background-color: lime;
+	}
+	
+	tr:last-child > td:nth-child(3) {
+			background-color: red;
+	}
+	
+</style>
+</head>
+<body>
+	
+	<!-- 
+		
+		# 아래의 엘리먼트의 색상을 변경해보세요.
+		
+			첫번째 tr의 두번째 td > background-color : lime
+			두번째 tr의 두번째 td > background-color : lime
+			세번째 tr의 두번째 td > background-color : lime
+			마지막 tr의 세번째 td > background-color : red
+	
+	-->
+
+	<h3>내 상세 정보</h3>
+	<form>	
+		<table border="1">
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" /></td>
+				<td><input type="button" value="수정" /></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" /></td>
+				<td><input type="button" value="수정"/></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" /></td>
+				<td><input type="button" value="수정"/></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td>
+					<input type="radio" name="memberGender" value="m"/>남성&emsp;&emsp;&emsp;
+					<input type="radio" name="memberGender" value="f"/>여성
+				</td>
+				<td><input type="button" value="수정"/></td>
+			</tr>
+			<tr>
+				<td>생년월일</td>
+				<td>
+				   <select>
+						<option value="2005">2005</option>
+						<option value="2006">2006</option>
+						<option value="2007">2007</option>
+						<option value="2008">2008</option>
+						<option value="2009">2009</option>
+						<option value="2010">2010</option>
+					</select>년 
+					<select>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+					</select>월
+					<select>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+					</select>일 &emsp;&emsp;
+					<input type="radio" name="memberBirthGn" value="1" /> 음력
+					<input type="radio" name="memberBirthGn" value="2" /> 양력
+				</td>
+				<td><input type="button" value="수정"/></td>
+			</tr>
+			<tr>
+				<td>전화번호</td>
+				<td>
+				    <select>
+						<option value="none">없음</option>
+						<option value="02">02</option>
+						<option value="031">031</option>
+				</select> 
+				    - <input type="text"> 
+				    - <input type="text">
+				</td>
+				<td><input type="button" value="수정" /></td>
+			</tr>
+			<tr>
+				<td>핸드폰 번호</td>
+				<td>
+				   <select>
+						<option value="none">없음</option>
+						<option value="010">010</option>
+						<option value="011">011</option>
+				</select> 
+				 - <input type="text"> 
+				 - <input type="text"><br>
+				   <input type="checkbox" value="Y" checked /> BMS에서 발송하는 SMS 소식을 수신합니다.
+			    </td>
+				<td><input type="button" value="수정" /></td>	
+			</tr>
+			<tr>
+				<td>이메일(e-mail)</td>
+				<td>
+				   <input type="text" /> @ 
+				   <input type="text" /> 
+				   <select>
+						 <option value="none">직접입력</option>
+						 <option value="gmail.com">gmail.com</option>
+						 <option value="naver.com">naver.com</option>
+						 <option value="daum.net">daum.net</option>
+						 <option value="nate.com">>nate.com</option>
+					</select><br> 
+				    <input type="checkbox" value="Y" checked /> BMS에서 발송하는 e-mail을 수신합니다.
+				</td>
+				<td><input type="button" value="수정"/></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td>
+					<input type="text" > 
+					<input type="button" value="검색"><br>
+					<p> 
+					  	지번 주소 : <input type="text"><br><br>
+					  	도로명 주소 : <input type="text"><br><br>
+					  	나머지 주소 : <input type="text">
+					 </p>
+				</td>
+				<td><input type="button" value="수정"/></td>
+			</tr>
+		</table>
+		<p>
+			<input type="button" value="회원탈퇴">
+		</p>
+	</form>
+</body>
+</html>

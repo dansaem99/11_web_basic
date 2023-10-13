@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자식(자손) 선택자2</title>
+<style>
+	
+	#header > h1 {
+		color: red;
+	}
+	
+	#header > #nav2 > h1 {
+		color: purple;
+	}
+	
+	#section h1 { 
+		color: green;
+	}
+	
+	#footer > #nav6 > #nav7 h1 {
+		color: pink;
+	}
+	
+</style>
+</head>
+<body>
+
+	<div id="header">
+		<h1>Header Basic1</h1>	<!-- red  o-->	
+		<h1>Header Basic2</h1>	<!-- red  o-->
+		<div id="nav1">
+			<h1>Navigation1</h1>	
+		</div>
+		<div id="nav2">
+			<h1>Navigation2</h1> <!-- purple  o -->
+		</div>
+		<div id="nav3">
+			<h1>Navigation3</h1>
+		</div>
+		<h1>Header Basic3</h1>	 <!-- red  o-->
+	</div>
+	<hr>
+	<div id="section">
+		<h1>section1</h1> <!-- green  o-->
+		<h1>section2</h1> <!-- green  o-->
+		<div id="nav4">	
+			<h1>Navigation4</h1>  <!-- green o-->
+		</div>
+		<div id="nav5">	
+			<h1>Navigation5</h1> <!-- green o-->
+		</div>
+		<h1 class="title">section2</h1> <!-- green o-->
+	</div>
+	<hr>
+	<div id="footer">
+		<div id="nav6">
+			<h1 >footer1</h1>
+			<h1>footer2</h1>
+			<div id="nav7">	
+				<h1>Navigation7</h1>  <!-- pink o--> 
+				<div id="nav8">
+					<h1>Navigation8</h1> 	 <!-- pink o--> 
+				</div>
+			</div>
+			<h1>footer3</h1>
+		</div>
+	</div>
+
+</body>	
+</html>

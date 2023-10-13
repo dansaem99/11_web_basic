@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>가상클래스</title>
+<style>
+
+	/*
+	
+		# 가상(의사) 클래스 [Pseudo-Class]
+	
+		- 선택자 뒤에 :(콜론)이 붙여 가상(의사)클래스로 사용한다.
+		- 요소의 특정 상태나 위치에 따라 스타일을 정의하는 데 사용한다.
+		- 가상(의사) 클래스를 사용하여 프런트앤드 코드 작성을 효과적으로 할 수 있다.
+		- 가상(의사) 클래스의 선택자의 종류는 필요에 따라 구글링하여 학습한다.
+	    
+	    [ 예시 ]
+	    :active
+	    :hover
+	    :checked
+	    :focus
+	    :nth-child
+	    
+	*/
+
+	
+	/* 사용 예시1 */
+	/* 리스트의 첫번째 요소*/	li:first-child {color: red;} /* first-child 첫번째 요소를 선택한다. */
+	/* 리스트의 두번째 요소*/	li:nth-child(2) {color: gray;} /* nth-child(n) n번째 요소를 선택한다. */
+	/* 리스트의 세번째 요소*/	li:nth-child(3) {color: fuchsia;}
+	/* 리스트의 두번째 요소*/	li:nth-child(4) {color: lime;}
+	/* 리스트의 마지막 요소 */	li:last-child {color: maroon;} /* last-child 마지막 요소를 선택한다. */
+	
+	
+	/* 사용 예시 2 */
+	/* 테이블의 첫번째 tr */ 	tr:first-child {background-color: maroon;}
+	/* 테이블의 3번째 tr */ 	tr:nth-child(odd) {background-color: skyblue;} /* odd = 홀수만 */
+	/* 테이블의 5번째 tr */		
+	/* 테이블의 7번째 tr */		
+	/* 테이블의 마지막 tr */	tr:last-child {background-color: purple;}
+	 	
+	 	
+	/* 사용 예시 3 */
+	
+	/* 방문되지 않은 링크의 스타일 */ 		a:link    { color : red; } 
+    /* 방문된 링크의 스타일 */				a:visited { color : green; } 
+  	/* 마우스가 위에 있을 때의 스타일 */	a:hover   { color : blue; }
+  	/* 마우스로 클릭되는 때의 스타일 */		a:active  { color : yellow; } 
+
+</style>
+</head>
+<body>
+
+	<ul>
+		<li>a</li>
+		<li>b</li>
+		<li>c</li>
+		<li>d</li>
+		<li>e</li>
+	</ul>
+	
+	<hr>
+	
+	<table border="1">
+		<tbody align="center">
+			<tr>
+				<td>정가</td>
+				<td>50,000원</td>
+			</tr>
+			<tr>
+				<td>판매가</td>
+				<td>45,000(10%할인)</td>
+			</tr>
+			<tr>
+				<td>포인트적립</td>
+				<td>3P 적립</td>
+			</tr>
+			<tr>
+				<td>포인트 추가적립</td>
+				<td>만원 이상 구매시 1,000P 추가 적립<br>5만원 이상 구매시 2,000P 추가 적립<br>편의점 배송 이용시 300P 추가 적립</td>
+			</tr>
+			<tr>
+				<td>발행일</td>
+				<td>2021-01-01</td>
+			</tr>
+			<tr>
+				<td>페이지 수</td>
+				<td>350쪽</td>
+			</tr>
+			<tr>
+				<td>ISBN</td>
+				<td>1234567-1234567</td>
+			</tr>
+			<tr>
+				<td>배송료</td>
+				<td>2,000원</td>
+			</tr>
+			<tr>
+				<td>배송안내</td>
+				<td>
+					[당일배송] 당일배송 서비스 시작!<br> 
+					[휴일배송] 휴일에도 배송받는 Bookshop
+				</td>
+			</tr>
+			<tr>
+				<td>도착예정일</td>
+				<td>지금 주문 시 내일 도착 예정</td>
+			</tr>
+		</tbody>
+	</table>
+		
+	<hr>
+	
+	<a href="http://www.naver.com" >마우스를 올려보세요</a>
+	
+</body>
+</html>
