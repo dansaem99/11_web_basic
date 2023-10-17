@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 스크립트의 함수</title>
+<script>
+
+	/*
+	
+		- 함수의 역할 및 사용이유는 자바의 메서드와 같다.
+		
+		[ 형식 ]
+		
+		function 함수명(파라메타){
+		     
+			return 리턴값; 
+		}
+	
+	*/
+	
+	/*
+		[ 자바 메서드 ]
+		반환타입 메서드명(파라메타) {
+			return 반환데이터;
+		}
+	*/
+	
+	// return타입을 적는게 아니라 function이라고 적어준다.
+	// 함수의 정의(define)
+	function func1() {
+		document.write("<h1>call method</h1>");
+		return; // 반환데이터가 없을 경우 return 키워드는 생략가능
+	}
+	
+	// 함수 호출(call)
+	func1();
+	
+	function func2() {
+		alert("함수가 호출되었습니다.");
+	}
+	
+</script>
+</head>
+<body>
+
+	<input type="button" value="함수실행" onclick="func2()">
+
+</body>
+</html>
