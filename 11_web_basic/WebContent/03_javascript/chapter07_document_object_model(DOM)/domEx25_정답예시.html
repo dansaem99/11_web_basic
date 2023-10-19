@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+
+	function printDeliveryPrice(method) {
+		
+		if (method == "rocket") {
+			document.getElementById("deliveyrPrice").innerHTML = "무료";
+		}
+		else {
+			document.getElementById("deliveyrPrice").innerHTML = "3,000원";
+		}
+		
+	}
+	
+
+</script>
+
+</head>
+<body>
+
+	<!-- 
+		
+		'로켓 배송'에 체크박스가 선택되어 있으면 '배송비'에 '무료'를 나타내고
+		'일반 배송'에 체크박스가 선택되어 있으면 '배송비'에 '3,000원'을 나타내시오. 
+	
+	 -->
+
+	<input type="radio" name="deliveryMethod" value="rocket" checked onchange="printDeliveryPrice('rocket')"> 로켓 배송 &emsp;
+	<input type="radio" name="deliveryMethod" value="nomal" onchange="printDeliveryPrice('nomal')"> 일반 배송
+
+	<h3>배송비 : <span id="deliveyrPrice">무료</span></h3>
+
+</body>
+</html>

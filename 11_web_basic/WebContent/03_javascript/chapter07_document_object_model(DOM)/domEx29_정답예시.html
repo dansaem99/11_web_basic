@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script>
+
+	function showImg() {
+		
+		var imgIdx = document.getElementById("selectImg").value;
+		
+		document.getElementById("targetImg").src = "../images/pic_" + imgIdx + ".jpg";
+		
+	}
+
+</script>
+</head>
+<body>
+	
+	<!-- 
+	
+		셀렉트에 따라서 다른 이미지를 화면에 출력하시오.
+		
+		예시)
+		
+		이미지 경로 >../images/이미지명
+		
+		그림1       > pic_1.jpg
+		그림2       > pic_2.jpg
+		그림3       > pic_3.jpg
+		
+		....
+	
+	 -->
+	
+	<div>
+		<img src="../images/pic_1.jpg" id="targetImg" width="200" height="200">
+	</div>
+	
+	이미지 : <select id="selectImg" onchange="showImg()">
+				<option value="1">그림 1</option>
+				<option value="2">그림 2</option>
+				<option value="3">그림 3</option>
+				<option value="4">그림 4</option>
+				<option value="5">그림 5</option>
+				<option value="6">그림 6</option>
+				<option value="7">그림 7</option>
+				<option value="8">그림 8</option>
+				<option value="9">그림 9</option>
+			</select>
+	
+</body>
+</html>
