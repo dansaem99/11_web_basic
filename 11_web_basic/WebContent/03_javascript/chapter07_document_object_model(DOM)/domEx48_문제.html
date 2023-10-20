@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습문제</title>
+</head>
+<body>
+
+	<!-- 
+	
+		# 입력하지 않은 필드의 값을 검증하여 
+		
+			1) alert으로 안내
+			2) focus로 이동
+			
+			하는 스크립트를 작성해 보시오. 
+		
+	-->
+
+	<form name="pay" >
+		<fieldset>
+			<p>
+				<strong>결제방법 : </strong>
+				<input type="radio" value="신용카드">신용카드 &emsp; 
+				<input type="radio" value="제휴 신용카드" >제휴 신용카드 &emsp;
+				<input type="radio" value="실시간 계좌이체">실시간 계좌이체 &emsp;
+				<input type="radio" value="무통장 입금">무통장 입금&emsp;
+			</p>
+			<p>
+				<strong>카드선택 : </strong>
+				<select>
+					<option>없음</option>
+					<option>삼성</option>
+					<option>하나SK</option>
+					<option>현대</option>
+					<option>KB</option>
+					<option>신한</option>
+					<option>롯데</option>
+					<option>BC</option>
+					<option> 시티</option>
+					<option>NH농협</option>
+				</select>
+			</p>
+			<p>
+				<strong>할부기간 : </strong>
+				<select>
+					<option>없음</option>
+					<option>일시불</option>
+					<option>2개월</option>
+					<option>3개월</option>
+					<option>4개월</option>
+					<option>5개월</option>
+					<option>6개월</option>
+				</select>
+			</p>	
+			<p>
+				<strong>휴대폰 번호 : </strong>
+				<input type="text" size="5"/>-
+				<input type="text" size="5"/>-
+				<input type="text" size="5"/>
+			</p>
+			<p>
+				<input type="submit" value="확인" />
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

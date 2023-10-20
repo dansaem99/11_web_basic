@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name 셀렉터</title>
+<script>
+
+	/*
+	
+		# form태그의 name속성으로 엘리먼트를 선택할때 document.name을 이용한 선택자를 이용하여 엘리먼트를 선택할 수 있다.
+		
+		[ 형식 ]
+		
+		document.[form tag의 name명].[name명] 
+	
+		예시)
+		document.f.name			// form태그의 name이 f이며 그 안의 name값이 name인 값을 선택
+		document.f.address		// form태그의 name이 f이며 그 안의 name값이 address인 값을 선택
+		document.join.password  // form태그의 name이 join이며 그 안의 name값이 password인 값을 선택
+	
+	*/
+
+	function printDataInConsole() {
+	    
+		console.log("학번 : " + document.join.studentNum.value);
+		console.log("이름 : " + document.join.name.value);
+		console.log("학년 : " + document.join.grade.value);
+		console.log("선택과목 : " + document.join.subject.value);
+
+		let webLanguage = document.join.webLanguage;
+
+		for (let i = 0; i < webLanguage.length; i++) {
+			if(webLanguage[i].checked) {
+				console.log("희망 과목 : " + webLanguage[i].value);
+			}
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+ 	<form name="join">
+ 		<fieldset>
+ 			<legend>회원가입</legend>
+	         <p>학번 : <input type="text" name="studentNum"></p>
+	         <p>이름 : <input type="text" name="name"></p>
+	         <p>
+	         	학년 :
+		        <input type="radio" name="grade" value="1" checked>1학년&nbsp;
+		        <input type="radio" name="grade" value="2">2학년&nbsp;
+		        <input type="radio" name="grade" value="3">3학년&nbsp;
+		        <input type="radio" name="grade" value="4">4학년
+	         </p>
+	         <p>
+				선택과목 : 
+		        <select name="subject">
+		             <option value="JAVA">JAVA</option>
+		             <option value="JSP">JSP</option>
+		             <option value="XML">XML</option>
+	        	 </select>
+	         </p>
+	         <p>
+	         	희망 과목 : 
+		         	<input type="checkbox" name="webLanguage" value="html"/> html
+					<input type="checkbox" name="webLanguage" value="css"/> css
+					<input type="checkbox" name="webLanguage" value="javascript"/> javascript
+	         </p>
+	         <p>
+	         	<input type="button" onclick="printDataInConsole()" value="확인">
+	         </p>
+    	</fieldset>
+    </form>
+</body>
+</html>
