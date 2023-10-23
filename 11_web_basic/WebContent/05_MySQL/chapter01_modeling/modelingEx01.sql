@@ -32,6 +32,7 @@
 
 */	
 
+CREATE DATABASE HRMS;
 
 
 /*
@@ -47,6 +48,7 @@
 
 */
 
+USE HRMS;
 
 /*
 
@@ -119,8 +121,35 @@
  	
  */
 
+CREATE TABLE EMPLOYEE (
+	EMP_NO		CHAR(7), #String empNo;
+    FIRST_NM 	VARCHAR(30),
+    LAST_NM 	VARCHAR(30),
+    GENDER  	CHAR(1),
+    HEIGHT 		DOUBLE,
+    WEIGHT 		DOUBLE,
+    HIRE_DT 	DATE
+);
 
+CREATE TABLE TITLE (
+	EMP_NO CHAR(7),
+    TITLE VARCHAR(30),
+    FROM_DT DATE,
+    TO_DT DATE
+);
 
+CREATE TABLE SALARY (
+	EMP_VO CHAR(7),
+    SALARY INT,
+    FROM_DT DATE,
+    TO_DY DATE
+);
+
+CREATE TABLE DEPT (
+	DEPT_CD INT,
+    DEPT_NM VARCHAR(100),
+    CREATE_DT CHAR(10)
+);
 
 /*
 
@@ -135,7 +164,10 @@
     
 */ 
 
-
+DESC EMPLOYEE;
+DESC DEPT;
+DESC SALARY;
+DESC TITLE;
 
 /*
 
@@ -163,6 +195,11 @@
         
 */ 
 
+ALTER TABLE DEPT ADD MANAGER_CD VARCHAR(30);
+ALTER TABLE DEPT MODIFY CREATE_DT VARCHAR(20);
+ALTER TABLE DEPT CHANGE CREATE_DT CREATE_DATE DATE;
+ALTER TABLE DEPT DROP CREATE_DATE;
+ALTER TABLE DEPT RENAME DEPARTMENT;
 
 /*
 			
@@ -175,6 +212,9 @@
 
 */
 
+DROP TABLE EMPLOYEE;
+DROP TABLE SALARY;
+DROP TABLE TITLE;
 
 /*
 	
@@ -186,6 +226,7 @@
             DROP DATABASE PMS;
 */
 
+DROP DATABASE HRMS;
 
 /*	
 			
@@ -205,7 +246,7 @@
      3) SQL 스크립트 실행
      
 		번개 아이콘 클릭 > (블록을 안했을 경우 전체 실행)
-						   (블록을 잡았을 경우 선택된 SQL만 실행)
+								   (블록을 잡았을 경우 선택된 SQL만 실행)
      
      4) 단축키
      
