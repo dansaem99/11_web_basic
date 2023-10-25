@@ -134,27 +134,77 @@ LIMIT 3;
 
 # 17) 아반떼 차량의 렌트가격을 40000원 으로 지정하기. 
 
+UPDATE CAR
+SET PRICE = 40000
+WHERE CAR_NM = '아반떼';
+
+COMMIT;
+SELECT CAR_NM, PRICE FROM CAR WHERE CAR_NM = '아반떼';
 
 # 18) 카니발 차량의 렌트가격을 현재 가격에서 -20000원 할인하기. 
 
+UPDATE CAR
+SET PRICE = PRICE - 20000
+WHERE CAR_NM = '카니발';
+
+COMMIT;
+SELECT * FROM CAR WHERE CAR_NM = '카니발';
 
 # 19) 현대브랜드 차량의 렌트가격을 현재 가격에서  -3000원 할인하기.
 
+UPDATE CAR
+SET PRICE = PRICE - 3000
+WHERE BRAND_NM = '현대';
+
+COMMIT;
+SELECT * FROM CAR WHERE BRAND_NM = '현대';
 
 # 20) 대형 차량의 가격을 현재 가격에서 + 10000원 증가하기
 
+UPDATE CAR
+SET PRICE = PRICE + 10000
+WHERE CATEGORY = '대형';
+
+COMMIT;
+SELECT * FROM CAR;
 
 # 21) 코란도 차량의 등록날짜를 현재시간으로 변경하기
 
+UPDATE CAR
+SET REG_DT = NOW()
+WHERE CAR_NM = '코란도';
+
+COMMIT;
+SELECT * FROM CAR;
 
 # 22) 아반떼 차량을 삭제하기
 
+DELETE FROM CAR
+WHERE CAR_NM = '아반떼';
+
+COMMIT;
+SELECT * FROM CAR;
 
 # 23) K3,K5,K7,K9차량을 삭제하기
 
+DELETE FROM CAR
+WHERE CAR_NM LIKE 'K%';
+
+COMMIT;
+SELECT * FROM CAR;
 
 # 24) 현대브랜드 차량을 삭제하기
 
+DELETE FROM CAR
+WHERE BRAND_NM = '현대';
+
+COMMIT;
+SELECT * FROM CAR;
 
 # 25) 2021년도에 등록된 차량을 삭제하기
 
+DELETE FROM CAR
+WHERE REG_DT BETWEEN '2021-01-01' AND '2021-12-31';
+
+COMMIT;
+SELECT * FROM CAR;
