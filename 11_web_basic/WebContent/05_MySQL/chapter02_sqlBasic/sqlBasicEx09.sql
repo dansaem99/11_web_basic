@@ -106,8 +106,8 @@ SELECT
 # 1) CONCAT  : 연결된 문자열을 반환한다.
 SELECT 
 		CONCAT('qwer1234' , '@' , 'gmail.com'),	 # qwer1234@gmail.com
-        CONCAT('%','keyword','%'),				 # %keyword%	
-		CONCAT('2021' , '-' , '01' , '-' ,'01');  # 2021-01-01
+        CONCAT('%','keyword','%'),				 	 # %keyword%	
+		CONCAT('2021' , '-' , '01' , '-' ,'01');  	 # 2021-01-01
         
         
 # 2) SUBSTRING , MID : 원본문자열을 자른 문자열을 반환한다.

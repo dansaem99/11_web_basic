@@ -245,7 +245,7 @@ WHERE
 		GENDER = 'M' AND HIRE_DATE >= '1990-01-01';
 
 
-# 26) 1990년 이후부터 60000이상의 급여를 받는 사원의 사원번호 , 급여 날짜 조회하기. (SALARIES)
+# 26) 1990년 이후부터 60000이상의 급여를 받는 사원의 사원번호 , 급여 조회하기. (SALARIES)
 SELECT 
 	    EMP_NO, 
 	    SALARY

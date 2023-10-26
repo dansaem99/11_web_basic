@@ -45,7 +45,7 @@ SELECT *
 FROM BOOK
 ORDER BY TITLE, AUTHOR;
 		
-# 4) 책 전체 컬럼을 조회하기 (가장 많이 팔린 책 순서 , 책 제목 ㄱ~ㅎ 순서) 
+# 4) 책 전체 컬럼을 조회하기 (가격이 높은 책 순서 , 책 제목 ㄱ~ㅎ 순서) 
 
 SELECT *
 FROM BOOK
