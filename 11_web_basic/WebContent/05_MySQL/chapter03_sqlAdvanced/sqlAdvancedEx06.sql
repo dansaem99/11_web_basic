@@ -81,41 +81,79 @@ WHERE
 			C.CLASS_CD = S.CLASS_CD;		        
  #------------------------------------------------       
 SELECT
-			C.CLASS_NM AS CLASS_CD,
-            C.LOCATION AS LOCATION,
-            S.STUDENT_NM AS STUDENT_NM
+			C.CLASS_NM AS CLASS_CD,				# CLASS에서 CLASS_CD 컬럼
+            C.LOCATION AS LOCATION,				# CLASS에서 LOCATION 컬럼
+            S.STUDENT_NM AS STUDENT_NM		# STUDENT에서 STUDENT_NM 컬럼
 FROM
-			CLASS C,
+			CLASS C,			# AS를 생략해 별명을 만들었다.
             STUDENT S
 WHERE
-			C.CLASS_CD = S.CLASS_CD;	
+			C.CLASS_CD = S.CLASS_CD;
 		
 # INNER JOIN 사용예시  (ANSI 조인) 
 
 SELECT
-		*
+							# *	 모든 컬럼 조회
+                C.*,		# CLASS테이블의 모든 컬럼 조회
+                S.*		# STUDENT테이블의 모든 컬럼 조회
 FROM
-		CLASS  
-		  JOIN STUDENT
-			ON CLASS.CLASS_CD = STUDENT.CLASS_CD;  
-#----------------------------------------------
+				CLASS C											# ,는 JOIN으로 바꾼거다.
+		INNER JOIN STUDENT S								# INNER은 생략가능하다.
+					ON C.CLASS_CD = S.CLASS_CD;		#JOIN에서는 WHERE랑 같은 ON이다.
+
+#---------------------------------------------------------------------------
 
 SELECT
-		*
+                C.CLASS_NM AS CLASS_NM,				# JAVA의 변수명 때문에 AS를 넣는거다.
+                C.LOCATION AS LOCATION,
+                S.STUDENT_NM AS STUDENT_NM
 FROM
-		CLASS  T1
-		  JOIN STUDENT T2
-			ON T1.CLASS_CD = T2.CLASS_CD; 
+				CLASS C
+		INNER JOIN STUDENT S
+					ON C.CLASS_CD = S.CLASS_CD;
 		   
 # LEFT 조인 사용 예시
 
-
+SELECT
+                *
+FROM
+				CLASS C
+		LEFT JOIN STUDENT S								# LEFT OUTER JOIN = OUTER은 생략가능 
+					ON C.CLASS_CD = S.CLASS_CD;
 
 # RIGHT 조인 사용 예시
 
+SELECT
+                *
+FROM
+				CLASS C
+		RIGHT JOIN STUDENT S
+					ON C.CLASS_CD = S.CLASS_CD;
 			   	 
 # (연습 예시 1) 2층에서 수업을 듣는 학생이름 , 과목이름 , 강의실위치를 조회하시오.			   	 
 
+SELECT
+                C.CLASS_NM AS CLASS_NM,
+                C.LOCATION AS LOCATION,
+                S.STUDENT_NM AS STUDENT_NM
+FROM
+				CLASS C
+		INNER JOIN STUDENT S
+					ON C.CLASS_CD = S.CLASS_CD
+				  #AND C.LOCATION IN ('201호', '202호');		# LIKE '2%';
+WHERE
+				C.LOCATION IN ('201호', '202호');			# AND해서 하든지 WHERE에서 하든지 상관없다.
 
 # (연습 예시 2) 각층별로 수업을 듣는 학생수를 조회하고 학생수가 많은 순서대로 조회하시오.
 
+SELECT
+				SUBSTRING(C.LOCATION, 1, 1) AS LAYER,
+				COUNT(*)							AS STUDENT_CNT
+FROM
+				CLASS C
+				  JOIN STUDENT S
+					ON C.CLASS_CD = S.CLASS_CD
+GROUP BY
+				LAYER
+ORDER BY                
+                STUDENT_CNT DESC;
