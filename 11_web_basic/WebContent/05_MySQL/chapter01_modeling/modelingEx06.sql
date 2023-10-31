@@ -28,7 +28,7 @@
           
 			 CASCADE     : 참조되는 테이블에서 데이터를 삭제하거나 수정하면 참조하는 테이블에서도 삭제와 수정이 같이 이루어짐
 			 SET NULL    : 참조되는 테이블에서 데이터를 삭제하거나 수정하면 참조하는 테이블의 데이터는 NULL로 변경됨
-			 RESTRICT    : 참조하는 테이블에 데이터가 남아 있으면 참조되는 테이블의 데이터를 삭제하거나 수정할 수 없음(기본설정)
+			 RESTRICT (제한적인)   : 참조하는 테이블에 데이터가 남아 있으면 참조되는 테이블의 데이터를 삭제하거나 수정할 수 없음(기본설정)
              NO ACTION   : 참조되는 테이블에서 데이터를 삭제하거나 수정하면 참조하는 테이블의 데이터는 변경되지 않음
 
 
@@ -275,6 +275,5 @@ DELETE FROM TEST10_1 WHERE PRODUCT_CD = 3;                			#
 
 SELECT * FROM TEST10_1;
 SELECT * FROM TEST10_2;
-	 			
-                
+	 			                
 DROP DATABASE CONSTRAINTS_TEST;
