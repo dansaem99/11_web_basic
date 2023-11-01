@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text() , html()</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	
+	/*
+				
+		# text()
+		
+			$(셀렉터).text() 	   : 선택자의 text를 가져온다.
+			$(셀렉터).text(text값) : 선택자의 text를 수정한다.
+		
+			- 선택된 개체의 text를(html을 제외한 순수한text) 가져온다. 
+			- text() 메서드 형식으로 값을 가져오며 값을 설정할 경우는 text(value)형태로 사용한다.
+			- XML과 HTML 문서에서 둘다 사용될 수 있다. 
+			- 폼 태그의 value는 가져오지 못한다. 
+		
+			
+		# html()
+		
+			$(선택자).html() 	   : 선택자의 html를 가져온다.
+			$(선택자).html(html값) : 선택자의 html를 수정한다.
+			
+			- 선택된 개체의 html형식(html의 모든 내용 포함)을 가져온다. 
+			- html() 메서드 형식으로 html값을 가져오며 값을 설정할 경우는 html(value)형태로 사용한다.
+			- XML과 HTML 문서에서 둘다 사용될 수 있다. 
+			- 폼 태그의 value는 가져오지 못한다. 
+
+	*/
+	
+	$().ready(function(){
+		
+		$("#button1").click(function(){
+			console.log($("#price").text());
+		});
+
+		let qty = 1;
+		$("#button2").click(function(){
+			qty++;
+			$("#price").text(30000 * qty);
+		});
+
+		$("#button3").click(function(){
+			// doucment.getElementById("method").innerHtml;
+			console.log($("#method").html());
+		});
+
+		// toggle = 스위치
+		let toggle = true;
+		$("#button4").click(function(){
+
+			let method = ""
+			if (toggle) {
+				method = "<input type='text' size='10'> - ";
+			    method += "<input type='text' size='10'> - ";
+			    method += "<input type='text' size='10'> - ";
+			    method += "<input type='text' size='10'>";
+				
+				toggle = false;
+			}
+			else {
+				method = "<select>";
+				method += "<option>010</option>";
+				method += "<option>011</option>";
+				method += "<option>017</option>";
+				method += "</select> - ";
+			    method += "<input type='text' size='10'> - ";
+			    method += "<input type='text' size='10'>";
+				toggle = true;
+			}
+
+			// js 버전 document.getElementById("method").innerHtml = method;
+			$("#method").html(method);
+
+		});
+
+	});	
+
+</script>
+</head>
+<body>
+
+ 	<p>가격 : <span id="price">30000</span>원</p>
+ 	
+ 	<div id="method"> 
+ 		
+ 	</div>
+ 	
+ 	<hr>
+   	
+   	<button id="button1">text getter</button>
+   	<button id="button2">text setter</button>
+   	<button id="button3">html getter</button>
+   	<button id="button4">html setter</button>
+   	
+</body>
+</html>

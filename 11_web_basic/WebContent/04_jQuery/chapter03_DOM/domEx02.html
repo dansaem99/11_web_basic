@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>val()</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	
+	/*
+	
+		# val() 
+		
+			$(셀렉터).val() 	 : 셀렉터의 값을 가져온다.
+			$(셀렉터).val(value) : 셀렉터의 값을 수정한다. 	
+			
+			- form태그 엘리먼트의 값을 가져온다.
+			- form태그 이외의 값은 가져오지 못하므로 text() 및 html() 메서드와 용도를 구별하여 사용한다.
+
+	*/
+
+    $().ready(function () {
+    	
+        $("#button1").click(function(){
+        	
+			/*
+				document.getElementById("price").value;
+				document.getElementById("addTax").value;
+				document.getElementById("totalPrice").value;
+			*/
+
+			console.log("가격" + $("#price").val());
+			console.log("부가세" + $("#addTax").val());
+			console.log("총금액" + $("#totalPrice").val());
+			console.log("");
+
+        });
+        
+        $("#button2").click(function(){
+        	
+			let price = $("#price").val();
+			price = Number(price);
+
+			// js버전 doucument.getElementById("addTax").value = price * 0.1;
+			$("#addTax").val(price * 0.1);
+
+			$("#totalPrice").val(price + price * 0.1);
+
+        });
+    
+    });
+</script>
+</head>
+<body>
+
+ 	<p>가격 : <input type="text" id="price"></p>
+ 	<p>부가세 : <input type="text" id="addTax"></p>
+ 	<p>최종금액 : <input type="text" id="totalPrice"></p>
+ 	
+ 	<hr>
+ 	
+   	<button id="button1">getter</button>
+   	<button id="button2">setter</button>
+   	
+</body>
+</html>

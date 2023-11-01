@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>this</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+	/*
+	
+		# this : 셀렉터 자신을 선택
+		
+			[ 예시 ]
+			
+			$("#productCd")의 $(this)의 값 >> $("#productCd")
+			$("#productNm")의 $(this)의 값 >> $("#productNm")
+	
+			
+		# $(셀렉터).each(function(){}); : 복수의 셀렉터의 반복문으로 사용한다.	
+			
+			[형식]
+		
+			$(체크박스 및 라디오 등).each(function(){
+				
+				$(this)
+				
+			});
+			
+	*/
+
+	$().ready(function(){
+
+		$("#id, #pwd").focus(function(){
+			// 자주하는 실수 : $("this") 은 오답이다!!!
+			$(this).css("background", "skyblue");
+		});
+
+		// focus가 없을때 하는 이벤트가 blur
+		$("#id, #pwd").blur(function(){
+			$(this).css("background", "white");
+		});
+
+		// for / foreach 처음부터 끝까지 개수만큼 돌아준다.
+		// for문이랑 똑같은거다.
+		// 개수만큼 도니까 3개의 checkbox가 있으니 3번 돈다.
+		$("[name='skillCheckbox']").each(function(){
+			// .val = .value다 jQuery는 .val로 사용한다.
+			console.log($(this).val());
+		});
+
+	});
+	
+</script>
+</head>
+<body>
+
+	<p>id : <input type="text" id="id"></p>
+	
+	<p>password : <input type="password" id="pwd"></p>
+	
+	<p>skill checkbox :
+		<input type="checkbox" name="skillCheckbox" value="vHtml"> html
+		<input type="checkbox" name="skillCheckbox" value="vCss"> css
+		<input type="checkbox" name="skillCheckbox" value="vJavascript"> javascript
+	</p>
+	
+</body>
+</html>
