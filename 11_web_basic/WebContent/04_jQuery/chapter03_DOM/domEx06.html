@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prop</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+	//checkbox 타입 사용 예시
+	$().ready(function(){
+		
+		$("#button1").click(function(){
+			
+			$("[name='checkboxTarget']:checked").each(function(){
+				alert("선택된 데이터 : " + $(this).val());
+			});
+			
+		});
+		
+		$("#button2").click(function(){
+			
+			// 선택된 체크박스 체크해지
+			$("[name='checkboxTarget']:checked").prop("checked" , false);
+			
+			for (var i = 0; i < 3; i++) {
+				var getYear = prompt("년도 입력 : ");
+				$("[name='checkboxTarget']").each(function(){
+					if (getYear == $(this).val()) {
+						$(this).prop("checked" , true);
+					}
+				});
+			}
+			
+		});
+		
+		var toggle = true;
+		$("#button3").click(function(){
+		
+			if (toggle) {
+				$("[name='checkboxTarget']").prop("disabled" , true);
+				toggle = false;			
+			}
+			else {
+				$("[name='checkboxTarget']").prop("disabled" , false);
+				toggle = true;		
+			}
+			
+		});
+		
+	});
+
+	
+</script>
+</head>
+<body>
+    
+	<input type="checkbox" name="checkboxTarget" value="2018" /> 2018
+	<input type="checkbox" name="checkboxTarget" value="2019" /> 2019
+	<input type="checkbox" name="checkboxTarget" value="2020" /> 2020
+	<input type="checkbox" name="checkboxTarget" value="2021" /> 2021
+	<input type="checkbox" name="checkboxTarget" value="2022" /> 2022
+	<hr>
+	
+	<button id="button1">조회하기</button>
+    <button id="button2">데이터 변경하기</button>
+    <button id="button3">속성 변경하기</button>
+
+	 
+</body>
+</html>

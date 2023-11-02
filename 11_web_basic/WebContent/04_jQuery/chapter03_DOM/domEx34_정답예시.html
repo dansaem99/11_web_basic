@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+	
+	$(function(){
+		
+		$("[id^='btn']").click(function(){
+			
+			var price = Number($("#price").val());
+			
+			price += Number($(this).prop("id").substring(3));
+			
+			$("#price").val(price);
+			
+		});
+		
+	});
+	
+</script>
+</head>
+<body>
+
+	<!-- 
+	
+		+5만 버튼을 클릭하면 기존의 가격에 금액에 50000원을 더한 금액을 표시하고
+		+10만 버튼을 클릭하면 기존의 가격에 금액에 100000원을 더한 금액을 표시하고
+		+15만 버튼을 클릭하면 기존의 가격에 금액에 200000원을 더한 금액을 표시하고
+		+20만 버튼을 클릭하면 기존의 가격에 금액에 200000원을 더한 금액을 표시하고
+		+50만 버튼을 클릭하면 기존의 가격에 금액에 500000원을 더한 금액을 표시하고
+		+100만 버튼을 클릭하면 기존의 가격에 금액에 100000원을 더한 금액을 표시하시오.
+		
+	-->
+	
+	<p><input type="text" value="0" id="price"> 원</p>
+
+	<input type="button" value="+5만"   id="btn50000" >
+	<input type="button" value="+10만"  id="btn100000" >
+	<input type="button" value="+15만"  id="btn150000">
+	<input type="button" value="+20만"  id="btn200000">
+	<input type="button" value="+50만"  id="btn500000">
+	<input type="button" value="+100만" id="btn1000000">
+	
+</body>
+</html>

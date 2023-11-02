@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prop</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+	// select 태그 사용 예시
+	$().ready(function(){
+		
+		$("#button1").click(function(){
+			alert("선택된 데이터 : " + $("#selectTarget").val());
+		});
+		
+		$("#button2").click(function(){
+			let getYear = prompt("년도 : ");
+			$("#selectTarget").val(getYear);
+		});
+		
+		let toggle = true;
+		$("#button3").click(function(){
+			
+			if (toggle) {
+				//document.getElementById("selectTarget").disabled = true;
+				$("#selectTarget").prop("disabled", true);
+				toggle = false;
+			}
+			else {
+				//document.getElementById("selectTarget").disabled = false;
+				$("#selectTarget").prop("disabled", false);
+				toggle = true;
+			} 
+			
+		});
+		
+	});
+	
+</script>
+</head>
+<body>
+    
+    <select id="selectTarget" >
+    	<option value="2018">2018년</option>
+    	<option value="2019">2019년</option>
+    	<option value="2020">2020년</option>
+    	<option value="2021">2021년</option>
+    	<option value="2022">2022년</option>
+    </select>
+    
+	<hr>
+	
+	<button id="button1">조회하기</button>
+    <button id="button2">데이터 변경하기</button>
+    <button id="button3">속성 변경하기</button>
+	 
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+</head>
+<body>
+
+	<!-- 
+	
+		유형에서 ssh를 선택하면 프로토콜에 tcp를 지정하고 포트번호에 22를 지정한 후 모두 readonly속성을 부여하시오.
+		유형에서 mysql를 선택하면 프로토콜에 tcp를 지정하고 포트번호에 3306를 지정한 후 모두 readonly속성을 부여하시오.
+		유형에서 oracle를 선택하면 프로토콜에 tcp를 지정하고 포트번호에 1521를 지정한 후 모두 readonly속성을 부여하시오.
+		유형에서 dns를 선택하면 프로토콜에 udp를 지정하고 포트번호에 53를 지정한 후 모두 readonly속성을 부여하시오.
+		유형에서 ntp를 선택하면 프로토콜에 udp를 지정하고 포트번호에 123를 지정한 후 모두 readonly속성을 부여하시오.
+	
+	 -->
+
+	<p>
+		유형 : <select id="service">
+			<option>ssh</option>
+			<option>mysql</option>
+			<option>oracle</option>
+			<option>dns</option>
+			<option>ntp</option>
+		</select> 
+	</p>
+	<p>프로토콜 : <input type="text" id="protocol" ></p>  
+	<p>포트번호 : <input type="text" id="portNumber"></p>
+	
+</body>
+</html>

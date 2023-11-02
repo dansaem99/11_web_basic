@@ -38,12 +38,16 @@
 
 		});
 		
-		
+		let idx = 1;
 		$("#button3").click(function(){
 			
 			//document.getElementById("imageTarget").src = "이미지";
 			// 하나를 쓰면 그 속성값을 가져온다. 2개 쓰면 그 뒤의 속성값으로 바뀐다.
-			$("#imageTarget").prop("src" , "이미지");
+			idx++;
+			
+			$("#imageTarget").prop("src" , "../images/pic_" + idx + ".jpg");
+			
+			if (idx == 9) idx = 0;
 
 		});
 		
@@ -51,12 +55,19 @@
 		$("#button4").click(function(){
 		
 			//document.getElementById("imageTarget").width = 500;
-			$("#imageTarget").prop("width", 500);
+			let width = $("#imageTarget").prop("width");
+			let height = $("#imageTarget").prop("height");
+
+			width += 30;
+			height += 30;
+
+			$("#imageTarget").prop("width", width);
+			$("#imageTarget").prop("height", height);
 
 		});
 		
 	});
-					
+
 </script>
 </head>
 <body>

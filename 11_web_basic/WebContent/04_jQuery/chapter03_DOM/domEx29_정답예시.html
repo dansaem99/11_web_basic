@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+	$(function(){
+		
+		$("#checkValidationBtn").click(function(){
+			
+			var email = $("#email").val();
+			
+			var result = "이메일 형식을 확인하여 주세요.";
+			for (var i = 0; i < email.length; i++) {
+				if (email[i] == "@") {
+					result = "확인 되었습니다.";
+				} 
+			}
+			
+			$("#result").html(result);
+			
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+	
+	<!-- 
+	
+		버튼을 클릭할때 작성된 이메일에 '@'가 포함되어 있으면 "확인 되었습니다."를 result에 출력하고
+		버튼을 클릭할때 작성된 이메일에 '@'가 포함되어 있지 않으면 "이메일 형식을 확인하여 주세요."를 result에 출력하시오.
+		
+	 -->
+
+	<p>	
+		email : <input type="text" id="email" name="email" > 
+		<input type="button" id="checkValidationBtn" value="확인">
+	</p>
+	<span id="result"></span>
+	
+</body>
+</html>
